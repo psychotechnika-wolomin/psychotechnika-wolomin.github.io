@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Psyhotechnika</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header class="main-header">
+	  <div class="header-inner">
+
+	    <a href="#" class="logo">
+	      <img src="logo.jpg" alt="Psychotechnika – Danuta Zalewska-Rukat">
+	    </a>
+
+	    <nav class="main-nav">
+	      <a href="#o-nas"><big>O nas</big></a>
+	      <a href="#oferta"><big>Oferta</big></a>
+	      <a href="#kontakt"><big>Kontakt</big></a>
+	    </nav>
+
+	  </div>
+	</header>
+
+
+
+
+	<main>
+		<section class="gallery">
+		  <div class="slider">
+
+		    <div class="slides">
+		      <img src="gallery/img7.jpg" alt="Gabinet – wnętrze">
+		      <img src="gallery/img2.jpg" alt="Gabinet – poczekalnia">
+		      <img src="gallery/img3.jpg" alt="Stanowisko badań">
+		      <img src="gallery/img4.jpg" alt="Testy psychologiczne">
+		      <img src="gallery/img5.jpg" alt="Badania psychotechniczne">
+		      <img src="gallery/img6.jpg" alt="Sprzęt diagnostyczny">
+		      <img src="gallery/img1.jpg" alt="Gabinet – detale">
+		      <img src="gallery/img8.jpg" alt="Wejście do gabinetu">
+		    </div>
+
+		    <button class="nav prev" aria-label="Poprzednie zdjęcie">‹</button>
+		    <button class="nav next" aria-label="Następne zdjęcie">›</button>
+
+		    <div class="dots"></div>
+
+		  </div>
+		</section>
+
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+
+			  const slides = document.querySelector('.slides');
+			  const images = document.querySelectorAll('.slides img');
+			  const dotsContainer = document.querySelector('.dots');
+			  const prev = document.querySelector('.prev');
+			  const next = document.querySelector('.next');
+
+			  let index = 0;
+			  const total = images.length;
+
+			  function updateSlider() {
+			    slides.style.transform = `translateX(-${index * 100}%)`;
+			    document.querySelectorAll('.dots button').forEach((dot, i) => {
+			      dot.classList.toggle('active', i === index);
+			    });
+			  }
+
+			  images.forEach((_, i) => {
+			    const dot = document.createElement('button');
+			    dot.addEventListener('click', () => {
+			      index = i;
+			      updateSlider();
+			    });
+			    dotsContainer.appendChild(dot);
+			  });
+
+			  prev.addEventListener('click', () => {
+			    index = (index - 1 + total) % total;
+			    updateSlider();
+			  });
+
+			  next.addEventListener('click', () => {
+			    index = (index + 1) % total;
+			    updateSlider();
+			  });
+
+			  setInterval(() => {
+			    index = (index + 1) % total;
+			    updateSlider();
+			  }, 5000);
+
+			  updateSlider();
+			});
+		</script>
+
+		
+		<section id="o-nas" class="about">
+		  <div class="about-wrapper">
+
+		    <div class="about-text">
+		      <h1>O nas</h1>
+
+		      <p class="about-lead">
+		        Nasza firma działa nieprzerwanie od 2007 roku, oferując profesjonalną
+		        diagnostykę psychologiczną związaną z orzecznictwem.
+		      </p>
+
+		      <p>
+		        Posiadamy uprawnienia do wykonywania badań psychologicznych kierowców
+		        (psychotechnicznych) oraz osób ubiegających się o pozwolenie na broń
+		        palną i ją posiadających.
+		      </p>
+
+		      <p>
+		        Oferujemy również wsparcie psychologiczne dla osób w kryzysie i trudnej
+		        sytuacji życiowej. Pracujemy w atmosferze empatii, zrozumienia i poczucia
+		        bezpieczeństwa, podchodząc indywidualnie do każdej osoby.
+		      </p>
+
+		      <p class="about-highlight">
+		        <strong>Nie wiesz, jakiej pomocy potrzebujesz?  </strong>
+		        Zadzwoń lub napisz – chętnie pomożemy.
+		      </p>
+		    </div>
+
+		    <div class="about-features">
+		      <div class="feature">
+		        <span>18+</span>
+		        <p>lat doświadczenia</p>
+		      </div>
+		      <div class="feature">
+		        <span>✔</span>
+		        <p>Uprawnienia psychologiczne</p>
+		      </div>
+		      <div class="feature">
+		        <span>🧠</span>
+		        <p>Indywidualne podejście</p>
+		      </div>
+		      <div class="feature">
+		        <span>🤝</span>
+		        <p>Atmosfera bezpieczeństwa</p>
+		      </div>
+		    </div>
+
+		  </div>
+		</section>
+
+		<section id="oferta" class="offer">
+  <h1>Oferta</h1>
+		<h2>Badania psychologiczne dla kierowców</h2>
+		
+		<div class="offer-grid">
+  	<article class="offer-card">
+      <p>
+		  Wykonujemy kompleksowe badania psychologiczne dla kierowców w różnych sytuacjach
+		  zawodowych i formalnych, zgodnie z obowiązującymi przepisami.
+		</p>
+		<p>
+		  Jeśli nie masz pewności, które badanie jest dla Ciebie odpowiednie,
+		  skontaktuj się z nami — chętnie doradzimy i wszystko wyjaśnimy.
+		</p>
+    </article>
+  </div>
+  <p></p>
+
+  <div class="offer-grid">
+
+
+    <article class="offer-card">
+
+      <ul>
+			  <li>kierowcy ciężarówek, autobusów, busów oraz taksówek</li>
+			  <li>kierowcy pojazdów uprzywilejowanych w ruchu drogowym</li>
+			  <li>kierowcy przewożący znaczne wartości pieniężne</li>
+			  <li>kierowcy pojazdów służbowych (badania i konsultacje psychologiczne)</li>
+			</ul>
+    </article>
+
+    <article class="offer-card">
+      <ul>
+			  <li>osoby przystępujące do kursów prawa jazdy kat. C, CE, D, DE</li>
+			  <li>kierowcy przedłużający ważność prawa jazdy kat. C, CE, D, DE</li>
+			  <li>instruktorzy nauki jazdy</li>
+			  <li>instruktorzy doskonalenia techniki jazdy</li>
+			  <li>kierowcy rajdowi i wyścigowi</li>
+			</ul>
+    </article>
+
+    <article class="offer-card">
+      <ul>
+        <li>osoby skierowane przez lekarza</li>
+			  <li>osoby, które przekroczyły 24 punkty karne</li>
+			  <li>uczestnicy wypadków drogowych</li>
+			  <li>sprawcy wypadków drogowych</li>
+			  <li>osoby prowadzące pojazd po użyciu narkotyków lub innych środków psychoaktywnych</li>
+      </ul>
+    </article>
+  </div>
+
+  <h2>Badania operatorów</h2>
+  <div class="offer-grid">
+  	<article class="offer-card">
+      <ul>
+        <li>wózków widłowych, akumulatorowych i jezdniowych</li>
+			  <li>meleków</li>
+			  <li>suwnic i żurawi wieżowych</li>
+			  <li>maszyn w ruchu</li>
+			  <li>koparek, koparko-ładowarek i ładowarek</li>
+			  <li>dźwigów</li>
+			  <li>maszyn budowlanych i drogowych</li>
+			  <li>maszyn wiertniczych</li>
+      </ul>
+    </article>
+  </div>
+  <h2>Badania w ramach medycyny pracy</h2>
+  <div class="offer-grid">
+  	<article class="offer-card">
+      <ul>
+        <li>kierowcy kategorii B prowadzący pojazdy służbowe</li>
+			  <li>kierowcy i operatorzy pracujący na wysokości</li>
+			  <li>pracownicy wykonujący prace fizyczne</li>
+			  <li>badanie widzenia zmierzchowego i wrażliwości na olśnienie</li>
+			  <li>kierowcy pojazdów uprzywilejowanych</li>
+      </ul>
+    </article>
+  </div>
+  <h2>Pozwolenie na broń</h2>
+  <div class="offer-grid">
+  	<article class="offer-card">
+      <ul>
+        <li>ochrona osobista, osób i mienia (broń gazowa i bojowa)</li>
+			  <li>cele łowieckie</li>
+			  <li>cele sportowe (broń palna i pneumatyczna)</li>
+			  <li>rekonstrukcje historyczne</li>
+			  <li>kolekcjonerskie i pamiątkowe</li>
+			  <li>szkoleniowe</li>
+      </ul>
+    </article>
+    <article class="offer-card">
+    	<p>Z badań korzystają również osoby pracujące jako:</p>
+      <ul>
+        <li>detektyw</li>
+			  <li>inspektor transportu drogowego</li>
+			  <li>strażnik miejski i gminny</li>
+			  <li>strażnik straży marszałkowskiej</li>
+			  <li>komornik, kurator, sędzia, prokurator, syndyk</li>
+			  <li>pracownik ochrony</li>
+      </ul>
+    </article>
+  </div>
+  <h2>Wsparcie psychologiczne</h2>
+  <div class="offer-grid">
+  	<article class="offer-card">
+      <p>
+			  Oferujemy wsparcie psychologiczne dla osób znajdujących się w kryzysie
+			  oraz przeżywających trudne sytuacje życiowe.
+			</p>
+			<p>
+			  Pomagamy w momentach silnego stresu, przeciążenia emocjonalnego,
+			  problemów osobistych i zawodowych oraz w sytuacjach nagłych,
+			  wymagających rozmowy i zrozumienia.
+			</p>
+			<p>
+			  Naszą pracę opieramy na empatii, uważności i poczuciu bezpieczeństwa.
+			  Do każdej osoby podchodzimy indywidualnie, dostosowując formę wsparcia
+			  do jej potrzeb.
+			</p>
+			<p>
+			  Jeśli nie wiesz, od czego zacząć – skontaktuj się z nami.
+			  Chętnie pomożemy wybrać odpowiednią formę wsparcia.
+			</p>
+    </article>
+  </div>
+
+
+
+</section>
+
+<section class="about-highlight">
+  <h2>Dla kogo są nasze badania?</h2>
+  <p>
+    Wykonujemy badania psychologiczne i lekarskie dla kierowców, operatorów
+    oraz osób wymagających stosownych orzeczeń.
+  </p>
+  <p>
+    Dbamy o sprawny przebieg badań i komfortową atmosferę.
+    Nie masz pewności, czy badanie jest Ci potrzebne?
+    Zadzwoń lub napisz – chętnie wszystko wyjaśnimy.
+  </p>
+  <p><strong>📞 608 525 592 | 📍 Głowackiego 33, 05-200 Wołomin</strong></p>
+</section>
+
+		<section id="kontakt" class="contact">
+		  <h1>Kontakt</h1>
+
+		  <div class="contact-grid">
+
+		    <!-- LEWA KOLUMNA -->
+		    <div class="contact-card">
+		      <h2>Dane kontaktowe</h2>
+
+		      <p class="contact-item">
+		        📞 <a href="tel:+48608525592">608 525 592</a>
+		      </p>
+
+		      <p class="contact-item">
+		        ✉️ <a href="mailto:kontakt@psychotechnika.pl">
+		          kontakt@psychotechnika.pl
+		        </a>
+		      </p>
+
+		      <p class="contact-item">
+		        📍 ul. Głowackiego 33<br>
+		        05-200 Wołomin
+		      </p>
+
+		     
+		    </div>
+
+		    <!-- PRAWA KOLUMNA -->
+		    <div class="contact-card">
+		      <h2>Godziny otwarcia</h2>
+
+		      <table class="hours">
+		        <tr>
+		          <td>Poniedziałek – Piątek</td>
+		          <td>16:00 – 20:00</td>
+		        </tr>
+		        <tr>
+		          <td>Sobota</td>
+		          <td>09:00 – 13:00</td>
+		        </tr>
+		        <tr class="closed">
+		          <td>Niedziela</td>
+		          <td>Zamknięte</td>
+		        </tr>
+		      </table>
+		    </div>
+
+		  </div>
+		</section>
+
+			<section id="mapa">
+				<div class="Google-maps">
+				<section class="map-embed">
+					<div class="map-embed__header">
+						<h2>Psychotechnika – Zalewska‑Rukat D.</h2>
+						<p>Badanie psychologiczne · Wsparcie terapeutyczne</p>
+					</div>
+
+					<div class="map-embed__frame">
+						<iframe
+							title="Mapa: Psychotechnika – Zalewska‑Rukat D."
+							src="https://www.google.com/maps?q=Psychotechnika%20%E2%80%93%20Zalewska%E2%80%91Rukat%20D.&hl=pl&z=17&output=embed"
+							allowfullscreen
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+						></iframe>
+						</div>
+
+
+					<div class="map-embed__actions">
+						<a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Psychotechnika%20%E2%80%93%20Zalewska%E2%80%91Rukat%20D."
+ target="_blank" rel="noopener">Wyznacz trasę</a>
+						<a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Psychotechnika%20%E2%80%93%20Zalewska%E2%80%91Rukat%20D."
+ target="_blank" rel="noopener">Otwórz w Google Maps</a>
+					</div>
+				</section>
+			</div>
+			</section>
+			
+		</section>
+
+			
+	</main>
+	<footer class="site-footer">
+	  <div class="footer-content">
+	    <div class="footer-info">
+	      <h3>Psychotechnika – Zalewska-Rukat D.</h3>
+	      <p>Badania psychologiczne kierowców · Wsparcie terapeutyczne</p>
+	      <p><strong>Adres:</strong> ul. Głowackiego 33, 05-200 Wołomin</p>
+	      <p><strong>Tel:</strong> <a href="tel:+48608525592">608 525 592</a></p>
+	      <p><strong>Email:</strong> <a href="mailto:kontakt@psychotechnika.pl">kontakt@psychotechnika.pl</a></p>
+	    </div>
+
+	    <nav class="footer-nav">
+	      <a href="#o-nas">O nas</a>
+	      <a href="#oferta">Oferta</a>
+	      <a href="#kontakt">Kontakt</a>
+	      <a href="#mapa">Mapa</a>
+	    </nav>
+	  </div>
+
+	  <div class="footer-bottom">
+	    <p>© 2007 Psychotechnika – Zalewska-Rukat D. Wszelkie prawa zastrzeżone.</p>
+	  </div>
+	</footer>
+</body>
+</html>
