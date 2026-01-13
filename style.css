@@ -607,3 +607,16 @@ h2 {
 .contact h3 {
   text-align: center;
 }
+
+.short {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .full {
+    display: none;
+  }
+  .short {
+    display: inline;
+  }
+}
